@@ -2,36 +2,39 @@ console.log('***** Cart Functions *****');
 // Make sure to test all functions here in the JS file!
 // We want to see how you are testing your code!!!
 
-// (1) create a global variable named `basket` and set it to an empty array.
-// (2) create a function called addItem
-// (3) add new item (Ruby) into the global array (basket)
-
+// add a global const maxItems equal to 5
+const maxItems = 5;
+// set basket equal to an empty array
+let gemList= ['opal', 'ruby', 'topaz'];
 let basket= [];
+//create a function addItem to take item as the parameter
 function addItem( item ){
   basket.push(item);
   return true;
 }
-console.log('in addItem', addItem('Ruby'));
+console.log('in addItem:', addItem('Ruby'));
 //adding an extra item to the list for good measure
 console.log('in addItem', addItem('Emerald'));
 console.log(basket);
 
+
+//console.log('checking if our basket includes Opal', basket.includes('Opal'));
+//console.log('checking if our basket includes Ruby', basket.includes('Ruby'));
+
 //(3) create a new function called listItems
-function listItems( thing1 , array1){
-  //it should loop over the items in the basket array
-  //function states that
-for (let i = 0; i < basket.length; i++) {
-  let found = false;
-  for (let i = 0; i < basket.length; i++) {
-    if (basket[i] === thing1){
-    console.log ('you have found an item in my basket:', thing1);
-    found = true
+function listItems(array){
+  //it should loop over the items in the basket array and log item in basket
+  for (x of array){
+    console.log(x);
+  }
 }
-}
-return found
-}
-}
+listItems(basket);
+listItems(gemList);
 //testing the value 'Ruby' to run through the loop
-console.log(listItems('Ruby', basket));
-console.log(listItems('Emerald', basket));
-console.log(listItems('Opal', basket));
+
+//create a function to empty the current items in the basket array
+function emptyArray(array){
+  array.splice(0, array.length)
+  return array
+}
+console.log(emptyArray(basket));
