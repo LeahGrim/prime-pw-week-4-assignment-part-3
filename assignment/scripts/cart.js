@@ -32,6 +32,7 @@ listItems(gemList);
 //create a function to empty the current items in the basket array
 function emptyArray(array){
   array.splice(0, array.length)
+//not sure what this return is doing
   return array
 }
 console.log(emptyArray(basket));
@@ -39,20 +40,21 @@ console.log(emptyArray(basket));
 // STRETCH GOALS//
 // add a global const maxItems equal to 5
 //create function called isFull
+// STILL MISSING, RETURNING TRUE AND FALSE
 const maxItems = 5;
 function isFull(array, thing1) {
     if (array.length < maxItems) { array.push(thing1);
   } else {
     console.log('no more room for', thing1);
   }
-  return true;
 }
 // calling the function to evaluate each string
+isFull(basket, 'apples',);
 isFull(basket, 'apples');
-isFull(basket, 'oranges');
 isFull(basket, 'grapefruits');
 isFull(basket, 'celery');
 isFull(basket, 'cranberries');
 isFull(basket, 'thyme');
 isFull(basket, 'oregano');
+//now let's view on the console what is in our basket
 console.log(basket);
